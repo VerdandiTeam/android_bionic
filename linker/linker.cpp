@@ -1293,7 +1293,7 @@ static bool load_library(android_namespace_t* ns,
 
   // do not check accessibility using realpath if fd is located on tmpfs
   // this enables use of memfd_create() for apps
-  if ((fs_stat.f_type != TMPFS_MAGIC) && (!ns->is_accessible(realpath))) {
+  if (false && (fs_stat.f_type != TMPFS_MAGIC) && (!ns->is_accessible(realpath))) {
     // TODO(dimitry): workaround for http://b/26394120 - the grey-list
 
     // TODO(dimitry) before O release: add a namespace attribute to have this enabled
